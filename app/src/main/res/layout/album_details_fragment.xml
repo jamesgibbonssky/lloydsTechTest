@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel"
+                  type="com.jgg.lloydstechtest.ui.viewmodel.AlbumDetailsViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_marginStart="8dp"
+                                                       android:layout_marginLeft="8dp"
+                                                       android:id="@+id/albumDetailLayout">
+
+        <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:text="@{viewModel.albumDetailsLiveData.artist}"
+                tools:text="Artist Name"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/album_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:text="@{viewModel.albumDetailsLiveData.name}"
+                tools:text="Album Name"
+                app:layout_constraintTop_toBottomOf="@+id/artist_name" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+
+        <ImageView
+                android:id="@+id/album_art"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/navigation_empty_icon"
+                app:layout_constraintTop_toBottomOf="@+id/album_name" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp" android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/listeners_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/listeners_label"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                app:layout_constraintEnd_toStartOf="@+id/listeners_value" android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/album_art" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/listeners_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                tools:text="500"
+                app:layout_constraintStart_toEndOf="@+id/listeners_label" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/album_art"/>
+
+        <TextView
+                android:id="@+id/playcount_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/playcount_label"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                app:layout_constraintEnd_toStartOf="@+id/playcount_value" android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toEndOf="@+id/listeners_value"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/album_art"/>
+
+        <TextView
+                android:id="@+id/playcount_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                tools:text="2000"
+                app:layout_constraintStart_toEndOf="@+id/playcount_label" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/album_art" android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"/>
+
+        <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBody1"
+                tools:text="Sumary text blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah "
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/listeners_label"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp" android:layout_marginLeft="24dp" android:layout_marginStart="24dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

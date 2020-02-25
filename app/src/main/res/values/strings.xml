@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LloydsTechTest</string>
+    <string name="search_query_hint">Enter album name to search</string>
+    <string name="album_thumbnail_accessibility">Album Thumbnail</string>
+    <string name="album_details_title">Album Details</string>
+    <string name="listeners_label">Listeners:</string>
+    <string name="playcount_label">Play count:</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/roundup_fragment"
+            android:id="@+id/nav_album_search">
+
+    <fragment
+            android:id="@+id/roundup_fragment"
+            android:name="com.jgg.lloydstechtest.ui.AlbumSearchFragment"
+            tools:layout="@layout/album_search_list">
+
+        <action
+                android:id="@+id/action_search_fragment_to_details_fragment"
+                app:destination="@id/album_details_fragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/album_details_fragment"
+            android:name="com.jgg.lloydstechtest.ui.AlbumDetailsFragment"
+            android:label="@string/album_details_title"
+            tools:layout="@layout/album_details_fragment">
+    </fragment>
+
+</navigation>
